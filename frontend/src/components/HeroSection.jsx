@@ -59,13 +59,14 @@ function HeroSection() {
                 {/* LEFT CONTENT */}
                 <div
                     className={`transition-all duration-1000 ${show
-                            ? "opacity-100 translate-y-0"
-                            : "opacity-0 translate-y-10"
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-10"
                         }`}
                 >
                     {/* RGB Moving Text */}
-                    <h1 className="rgb-text hero-heading text-4xl md:text-6xl leading-tight mb-6">
-                        New Ukhra Youth <br /> Computer Training Centre
+                    <h1 className="travel-text hero-heading leading-tight mb-6 text-4xl md:text-6xl font-bold">
+                        New Ukhra Youth <br />
+                        Computer Training Centre
                     </h1>
 
                     <p className="text-lg md:text-xl mb-8 text-orange-400 font-medium h-8">
