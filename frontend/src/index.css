@@ -9,3 +9,7 @@
 .group:hover .trace-border {
     stroke-dashoffset: 0;
 }
+
+button{
+    cursor: pointer;
+}

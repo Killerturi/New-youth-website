@@ -1,27 +1,63 @@
+import { useState } from "react";
+import galleryImages from "../data/galleryImages";
+import { X } from "lucide-react";
+
 function Gallery() {
-    const images = [
-        "https://source.unsplash.com/400x300/?computer,classroom",
-        "https://source.unsplash.com/400x300/?students,computer",
-        "https://source.unsplash.com/400x300/?training,lab",
-        "https://source.unsplash.com/400x300/?education,computer"
-    ];
+    const [selectedImage, setSelectedImage] = useState(null);
 
     return (
-        <div className="max-w-7xl mx-auto px-6 py-20">
-            <h1 className="text-4xl font-bold text-center mb-12 text-primary">
-                Our Gallery
-            </h1>
+        <div className="bg-[#0b1120] py-28 min-h-screen">
 
-            <div className="grid md:grid-cols-4 gap-6">
-                {images.map((img, index) => (
-                    <img
-                        key={index}
-                        src={img}
-                        alt="gallery"
-                        className="rounded-xl shadow-lg hover:scale-105 transition duration-300"
-                    />
-                ))}
+            {/* ===== HEADER ===== */}
+            <div className="max-w-7xl mx-auto px-6 text-center mb-20">
+                <h1 className="text-5xl font-bold text-white tracking-wide">
+                    Our Gallery
+                </h1>
+                <div className="w-24 h-[3px] bg-orange-500 mx-auto mt-6 rounded-full"></div>
             </div>
+
+            {/* ===== MASONRY STYLE GRID ===== */}
+            <div className="max-w-7xl mx-auto px-6 columns-1 sm:columns-2 md:columns-3 gap-6 space-y-6">
+
+                {galleryImages.map((image) => (
+                    <div
+                        key={image.id}
+                        className="relative group overflow-hidden rounded-2xl cursor-pointer break-inside-avoid"
+                        onClick={() => setSelectedImage(image.src)}
+                    >
+                        <img
+                            src={image.src}
+                            alt="Gallery"
+                            className="w-full rounded-2xl transform group-hover:scale-110 transition duration-700"
+                        />
+
+                        {/* Overlay */}
+                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition duration-500 rounded-2xl"></div>
+                    </div>
+                ))}
+
+            </div>
+
+
+            {/* ===== LIGHTBOX MODAL ===== */}
+            {selectedImage && (
+                <div className="fixed inset-0 bg-black/90 backdrop-blur-md flex items-center justify-center z-50">
+
+                    <button
+                        onClick={() => setSelectedImage(null)}
+                        className="absolute top-8 right-8 text-white hover:text-orange-500 transition"
+                    >
+                        <X size={36} />
+                    </button>
+
+                    <img
+                        src={selectedImage}
+                        alt="Full View"
+                        className="max-w-[90%] max-h-[85vh] rounded-2xl shadow-2xl animate-fadeIn"
+                    />
+
+                </div>
+            )}
         </div>
     );
 }

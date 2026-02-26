@@ -1,15 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import herobg from "../assets/images/herobg.jpg";
-import circle1 from "../assets/images/circle1.jpg";
-import circle2 from "../assets/images/circle2.webp";
-import circle3 from "../assets/images/circle3.webp";
+import herobg1 from "../assets/images/herobg1.jpeg";
+import herobg2 from "../assets/images/herobg2.jpeg";
+import herobg3 from "../assets/images/herobg3.jpeg";
+import herobg4 from "../assets/images/herobg4.jpeg";
+
 import "../style/heroSection.css";
 
 function HeroSection() {
     const navigate = useNavigate();
-    const images = [circle2, circle3, circle1];
-    const [currentImage, setCurrentImage] = useState(0);
+
+    const backgrounds = [herobg1, herobg2,herobg3,herobg4];
+    const [currentBg, setCurrentBg] = useState(0);
+
     const [typedText, setTypedText] = useState("");
     const [show, setShow] = useState(false);
 
@@ -27,44 +30,54 @@ function HeroSection() {
         return () => clearInterval(typing);
     }, []);
 
-    // Image slider
+    // Background slider
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentImage((prev) => (prev + 1) % images.length);
-        }, 3500);
+            setCurrentBg((prev) => (prev + 1) % backgrounds.length);
+        }, 6000);
         return () => clearInterval(interval);
     }, []);
 
-    // Animation delay
+    // Entrance animation delay
     useEffect(() => {
         const timer = setTimeout(() => setShow(true), 500);
         return () => clearTimeout(timer);
     }, []);
 
     return (
-        <section
-            className="relative min-h-[95vh] flex items-center overflow-hidden"
-            style={{
-                backgroundImage: `url(${herobg})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-                backgroundAttachment: "fixed",
-            }}
-        >
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40"></div>
+        <section className="relative min-h-[95vh] flex items-center overflow-hidden">
 
-            <div className="relative z-10 max-w-7xl mx-auto px-6 w-full grid md:grid-cols-2 gap-10 items-center">
+            {/* ===== BACKGROUND SLIDER WITH ZOOM ===== */}
+            <div
+                className="absolute inset-0 flex transition-transform duration-[2000ms] ease-in-out"
+                style={{
+                    width: `${backgrounds.length * 100}%`,
+                    transform: `translateX(-${currentBg * (100 / backgrounds.length)}%)`,
+                }}
+            >
+                {backgrounds.map((bg, index) => (
+                    <div
+                        key={index}
+                        className="elite-bg w-full h-full bg-cover bg-center"
+                        style={{ backgroundImage: `url(${bg})` }}
+                    />
+                ))}
+            </div>
 
-                {/* LEFT CONTENT */}
+            {/* Cinematic Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/60 to-black/50 z-10"></div>
+
+            {/* Subtle Light Glow */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_70%)] z-10"></div>
+
+            {/* Content */}
+            <div className="relative z-20 max-w-7xl mx-auto px-6 w-full grid md:grid-cols-2 gap-10 items-center">
+
                 <div
-                    className={`transition-all duration-1000 ${show
-                        ? "opacity-100 translate-y-0"
-                        : "opacity-0 translate-y-10"
+                    className={`transition-all duration-1000 ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
                         }`}
                 >
-                    {/* RGB Moving Text */}
-                    <h1 className="travel-text hero-heading leading-tight mb-6 text-4xl md:text-6xl font-bold">
+                    <h1 className="royal-heading leading-tight mb-6 text-4xl md:text-6xl text-white">
                         New Ukhra Youth <br />
                         Computer Training Centre
                     </h1>
@@ -75,7 +88,9 @@ function HeroSection() {
 
                     <button
                         onClick={() => navigate("/courses")}
-                        className="bg-orange-500 hover:bg-orange-600 px-10 py-3 rounded-full text-white font-semibold transition duration-300 shadow-xl"
+                        className="px-10 py-3 rounded-full font-semibold text-white 
+            bg-gradient-to-r from-orange-500 to-orange-600
+            hover:scale-105 transition duration-300 shadow-2xl"
                     >
                         Explore Courses
                     </button>
@@ -86,4 +101,4 @@ function HeroSection() {
     );
 }
 
-export default HeroSection;
+export default HeroSection;         

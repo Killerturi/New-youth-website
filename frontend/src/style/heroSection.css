@@ -95,3 +95,25 @@
         background-position: -100% center;
     }
 }
+
+/* ===== ELITE BACKGROUND SLOW ZOOM ===== */
+
+/* .elite-bg {
+    animation: slowZoomElite 8s ease-in-out infinite alternate;
+}
+
+@keyframes slowZoomElite {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+} */
+
+.royal-heading {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
