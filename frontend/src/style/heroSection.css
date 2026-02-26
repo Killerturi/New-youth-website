@@ -1,0 +1,95 @@
+/* ===== CLASSY FONT STYLING ===== */
+
+.hero-heading {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
+.hero-subtext {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ============================= */
+/* ROLL FROM LEFT + DROP + STOP */
+/* ============================= */
+
+@keyframes rollFromLeft {
+    0% {
+        transform: translateX(-120vw) translateY(-200px) rotate(0deg);
+    }
+
+    40% {
+        transform: translateX(-20vw) translateY(40px) rotate(360deg);
+    }
+
+    65% {
+        transform: translateX(20px) translateY(-20px) rotate(720deg);
+    }
+
+    80% {
+        transform: translateX(-10px) translateY(10px) rotate(900deg);
+    }
+
+    100% {
+        transform: translateX(0px) translateY(0px) rotate(1080deg);
+    }
+}
+
+.animate-roll-ball {
+    animation: rollFromLeft 2.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Ground shadow reacts */
+
+@keyframes shadowRoll {
+    0% {
+        transform: translateX(-50%) scale(0.4);
+        opacity: 0;
+    }
+
+    40% {
+        transform: translateX(-50%) scale(1.2);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 0.5;
+    }
+}
+
+.animate-shadow-roll {
+    animation: shadowRoll 2.2s ease-out;
+}
+
+/* Prevent duplicate artifact */
+
+.roll-in-wrapper {
+    overflow: visible;
+}
+
+/* ===== RGB Moving Gradient Text ===== */
+
+.rgb-text {
+    background: linear-gradient(270deg,
+            #ff0000,
+            #ff7a00,
+            #ffd000,
+            #00ff6a,
+            #00c3ff,
+            #ff0000);
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: rgbMove 3s linear infinite;
+}
+
+@keyframes rgbMove {
+    0% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
