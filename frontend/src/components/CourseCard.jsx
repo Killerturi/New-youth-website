@@ -7,7 +7,7 @@ function CourseCard({ title, duration, description }) {
             </p>
             <p className="text-gray-700 mb-4">{description}</p>
 
-            <button className="bg-primary text-white px-5 py-2 rounded-lg hover:bg-secondary transition">
+            <button className="bg-primary text-blue px-5 py-2 rounded-lg hover:bg-secondary transition">
                 Enroll Now
             </button>
         </div>
