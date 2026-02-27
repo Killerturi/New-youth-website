@@ -1,11 +1,28 @@
 @import "tailwindcss";
 
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 0.5px;
+}
+
 .trace-border {
-    stroke-dasharray: 1000;
-    stroke-dashoffset: 1000;
-    transition: stroke-dashoffset 1.6s ease;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  transition: stroke-dashoffset 1.6s ease;
 }
 
 .group:hover .trace-border {
-    stroke-dashoffset: 0;
+  stroke-dashoffset: 0;
+}
+
+button {
+  cursor: pointer;
 }
