@@ -2,6 +2,7 @@ import { useState } from "react";
 import courses from "../data/coursesData";
 import courseHeaderBg from "../assets/images/coursebg.jpg";
 import { Laptop, Calculator, Code, PenTool, X } from "lucide-react";
+import CourseModal from "../components/CourseModal";
 
 function Courses() {
   const [selectedCourse, setSelectedCourse] = useState(null);
@@ -82,78 +83,10 @@ function Courses() {
       </section>
 
       {/* ================= MODAL ================= */}
-      {selectedCourse && (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 px-4">
-          <div className="bg-white/95 backdrop-blur-xl w-full max-w-3xl rounded-3xl shadow-2xl p-10 relative max-h-[90vh] overflow-y-auto border border-white/40">
-
-            {/* Close */}
-            <button
-              onClick={() => setSelectedCourse(null)}
-              className="absolute top-6 right-6 text-gray-500 hover:text-black"
-            >
-              <X size={24} />
-            </button>
-
-            <h2 className="text-3xl font-bold text-indigo-700 mb-4">
-              {selectedCourse.title}
-            </h2>
-
-            <div className="grid grid-cols-2 gap-4 text-sm mb-6">
-              <p><strong>Code:</strong> {selectedCourse.code}</p>
-              <p><strong>Category:</strong> {selectedCourse.category}</p>
-              <p><strong>Duration:</strong> {selectedCourse.duration}</p>
-              <p className="text-indigo-600 font-semibold">
-                <strong>Fees:</strong> ₹{selectedCourse.fees}
-              </p>
-            </div>
-
-            <h3 className="text-xl font-semibold text-slate-800 mb-4">
-              Course Syllabus
-            </h3>
-
-            {/* Array syllabus */}
-            {Array.isArray(selectedCourse.syllabus) ? (
-              <ul className="space-y-2">
-                {selectedCourse.syllabus.map((item, i) => (
-                  <li
-                    key={i}
-                    className="bg-indigo-50 p-3 rounded-lg text-gray-700"
-                  >
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              Object.entries(selectedCourse.syllabus).map(
-                ([semester, subjects], index) => (
-                  <div key={index} className="mb-6">
-                    <h4 className="font-semibold text-indigo-600 mb-3 capitalize">
-                      {semester}
-                    </h4>
-                    <ul className="space-y-2">
-                      {subjects.map((subject, i) => (
-                        <li
-                          key={i}
-                          className="bg-indigo-50 p-3 rounded-lg text-gray-700"
-                        >
-                          {subject}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )
-              )
-            )}
-
-            <div className="mt-8 border-t pt-6 text-sm text-gray-600 space-y-2">
-              <p>✔ Practical Lab Sessions</p>
-              <p>✔ Real-world Assignments</p>
-              <p>✔ Industry-Recognized Certificate</p>
-              <p>✔ Career Guidance & Interview Prep</p>
-            </div>
-          </div>
-        </div>
-      )}
+      <CourseModal
+        selectedCourse={selectedCourse}
+        onClose={() => setSelectedCourse(null)}
+      />
     </div>
   );
 }

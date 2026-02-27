@@ -92,6 +92,18 @@ function Navbar() {
             <NavLink to="/contact" className="hover:text-blue-900 transition">
               Contact
             </NavLink>
+            <NavLink
+              to="https://quiz-frontend-psi-six.vercel.app/"
+              target="_blank"
+              className="relative group text-blue-900 font-semibold flex items-center"
+            >
+              Mock Test
+              <span className="ml-2 w-2 h-2 bg-green-500 rounded-full animate-ping"></span>
+
+              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-blue-900 
+                   transition-all duration-300 
+                   group-hover:w-full"></span>
+            </NavLink>
           </div>
 
           {/* HAMBURGER BUTTON */}
@@ -105,9 +117,8 @@ function Navbar() {
 
         {/* ===== MOBILE MENU ===== */}
         <div
-          className={`md:hidden bg-white shadow-lg transition-all duration-300 overflow-hidden ${
-            mobileOpen ? "max-h-96 py-4" : "max-h-0"
-          }`}
+          className={`md:hidden bg-white shadow-lg transition-all duration-300 overflow-hidden ${mobileOpen ? "max-h-96 py-4" : "max-h-0"
+            }`}
         >
           <div className="flex flex-col space-y-4 px-6 text-gray-700 font-medium">
             <NavLink onClick={() => setMobileOpen(false)} to="/">
@@ -124,6 +135,9 @@ function Navbar() {
             </NavLink>
             <NavLink onClick={() => setMobileOpen(false)} to="/contact">
               Contact
+            </NavLink>
+            <NavLink to="https://quiz-frontend-psi-six.vercel.app/" target="_blank" className="hover:text-blue-900 transition">
+              Mock Test
             </NavLink>
           </div>
         </div>

@@ -4,13 +4,14 @@ import herobg1 from "../assets/images/herobg1.jpeg";
 import herobg2 from "../assets/images/herobg2.jpeg";
 import herobg3 from "../assets/images/herobg3.jpeg";
 import herobg4 from "../assets/images/herobg4.jpeg";
+import herobg5 from "../assets/images/herobg5.jpeg";
 
 import "../style/heroSection.css";
 
 function HeroSection() {
   const navigate = useNavigate();
 
-  const backgrounds = [herobg1, herobg2, herobg3, herobg4];
+  const backgrounds = [herobg1, herobg2, herobg3, herobg4,herobg5];
   const [currentBg, setCurrentBg] = useState(0);
 
   const [typedText, setTypedText] = useState("");
