@@ -11,6 +11,8 @@ import img8 from "../assets/gallery/img8.webp";
 import img9 from "../assets/gallery/img9.webp";
 import img10 from "../assets/gallery/img10.webp";
 import img11 from "../assets/gallery/img11.webp";
+import img12 from "../assets/gallery/img12.webp";
+import img13 from "../assets/gallery/img13.webp";
 
 const galleryImages = [
   { id: 1, src: img1 },
@@ -24,6 +26,8 @@ const galleryImages = [
   { id: 9, src: img9 },
   { id: 10, src: img10 },
   { id: 11, src: img11 },
+  { id: 12, src: img12 },
+  { id: 13, src: img13 },
 ];
 
 export default galleryImages;
