@@ -1,155 +1,211 @@
-function About() {
-  return (
-    <div className="bg-white">
+import { useEffect, useState, useRef } from "react";
+import ScrollReveal from "../components/ScrollReveal";
 
-      {/* ================= HERO SECTION ================= */}
-      <section className="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-20 px-6">
-        <div className="max-w-6xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
-            About New Ukhra Youth Computer Training Centre
-          </h1>
-          <p className="max-w-3xl mx-auto text-lg leading-8 text-gray-200">
-            Established in <span className="text-yellow-400 font-semibold">April 2009</span>, 
-            NUYCTC has grown into a professionally managed institute with 
-            <span className="text-yellow-400 font-semibold"> 16+ years of excellence </span> 
-             in digital education and skill development.
-          </p>
+function About() {
+
+  /* ================= Animated Counter ================= */
+
+  function AnimatedNumber({ value, suffix = "" }) {
+    const [count, setCount] = useState(0);
+    const ref = useRef(null);
+    const [visible, setVisible] = useState(false);
+
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) setVisible(true);
+        },
+        { threshold: 0.6 }
+      );
+
+      if (ref.current) observer.observe(ref.current);
+      return () => observer.disconnect();
+    }, []);
+
+    useEffect(() => {
+      if (!visible) return;
+
+      let start = 0;
+      const duration = 2000;
+      const increment = value / (duration / 16);
+
+      const counter = setInterval(() => {
+        start += increment;
+        if (start >= value) {
+          setCount(value);
+          clearInterval(counter);
+        } else {
+          setCount(Math.floor(start));
+        }
+      }, 16);
+
+      return () => clearInterval(counter);
+    }, [visible, value]);
+
+    return (
+      <span ref={ref}>
+        {count}
+        {suffix}
+      </span>
+    );
+  }
+
+  return (
+    <div className="bg-[#f8fafc] overflow-hidden">
+
+      {/* ================= HERO ================= */}
+      <section className="relative bg-gradient-to-br from-[#0f172a] via-[#1e3a8a] to-[#2563eb] text-white py-32 px-6 overflow-hidden">
+
+        <div className="absolute -top-32 -left-32 w-96 h-96 bg-blue-500 opacity-20 blur-3xl rounded-full"></div>
+        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-indigo-500 opacity-20 blur-3xl rounded-full"></div>
+
+        <div className="relative max-w-6xl mx-auto text-center">
+          <ScrollReveal>
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight tracking-tight">
+              About NUYCTC
+            </h1>
+          </ScrollReveal>
+
+          <ScrollReveal delay={200}>
+            <p className="max-w-3xl mx-auto text-lg md:text-xl text-gray-200 leading-8">
+              Established in <span className="text-yellow-400 font-semibold">April 2009</span>,
+              we proudly carry <span className="text-yellow-400 font-semibold">16+ years of excellence </span>
+              in digital education and skill development.
+            </p>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* ================= MAIN CONTENT ================= */}
-      <section className="max-w-6xl mx-auto px-6 py-16">
+      {/* ================= INTRO ================= */}
+      <section className="max-w-6xl mx-auto px-6 py-24">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
 
-        <p className="text-gray-700 leading-8 text-lg mb-8">
-          New Ukhra Youth Computer Training Centre (NUYCTC) has successfully trained 
-          <span className="font-semibold text-blue-700"> 4,400+ students</span> since its inception. 
-          Located in Ukhra, West Bengal, the institute stands as a trusted name in 
-          computer education, known for its structured curriculum, practical training 
-          methodology, and commitment to academic excellence.
-        </p>
+          <ScrollReveal>
+            <div>
+              <h2 className="text-4xl font-bold text-[#0f172a] mb-6">
+                Shaping Digital Futures
+              </h2>
+              <p className="text-gray-700 leading-8 text-lg">
+                New Ukhra Youth Computer Training Centre has successfully trained
+                <span className="text-blue-700 font-semibold"> 4,400+ students</span>.
+                We combine structured curriculum, practical training, and industry relevance
+                to empower students with real-world digital skills.
+              </p>
+            </div>
+          </ScrollReveal>
 
-        {/* ================= STATS SECTION ================= */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center mb-16">
-          <div className="bg-blue-50 p-8 rounded-xl shadow-md">
-            <h2 className="text-4xl font-bold text-blue-700">2009</h2>
-            <p className="mt-2 text-gray-600 font-medium">Established</p>
-          </div>
-          <div className="bg-blue-50 p-8 rounded-xl shadow-md">
-            <h2 className="text-4xl font-bold text-blue-700">16+</h2>
-            <p className="mt-2 text-gray-600 font-medium"> Years of Excellence</p>
-          </div>
-          <div className="bg-blue-50 p-8 rounded-xl shadow-md">
-            <h2 className="text-4xl font-bold text-blue-700">4400+</h2>
-            <p className="mt-2 text-gray-600 font-medium">Students Trained</p>
-          </div>
-          <div className="bg-blue-50 p-8 rounded-xl shadow-md">
-            <h2 className="text-4xl font-bold text-blue-700">100%</h2>
-            <p className="mt-2 text-gray-600 font-medium">Practical Learning Focus</p>
+          <ScrollReveal delay={200}>
+            <div className="bg-white p-12 rounded-3xl shadow-2xl border border-gray-100 hover:shadow-blue-500/20 transition duration-500">
+              <h3 className="text-xl font-semibold text-blue-800 mb-4">
+                Why We Stand Out
+              </h3>
+              <ul className="space-y-3 text-gray-700">
+                <li>✔ Industry-aligned curriculum</li>
+                <li>✔ 100% practical learning</li>
+                <li>✔ Experienced faculty</li>
+                <li>✔ Career-focused approach</li>
+              </ul>
+            </div>
+          </ScrollReveal>
+
+        </div>
+      </section>
+
+      {/* ================= STATS ================= */}
+      <section className="bg-[#0f172a] py-32 relative overflow-hidden">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-4 gap-10 text-center">
+
+            {[
+              { value: 2009, label: "Established" },
+              { value: 16, label: "Years of Excellence", suffix: "+" },
+              { value: 4400, label: "Students Trained", suffix: "+" },
+              { value: 100, label: "Practical Focus", suffix: "%" },
+            ].map((item, i) => (
+              <ScrollReveal key={i} delay={i * 200}>
+                <div className="bg-white/10 backdrop-blur-xl border border-white/20 p-14 rounded-3xl shadow-2xl hover:scale-105 transition duration-500">
+                  <h2 className="text-5xl font-bold text-yellow-400 mb-4">
+                    <AnimatedNumber value={item.value} suffix={item.suffix || ""} />
+                  </h2>
+                  <p className="text-gray-200 text-lg">{item.label}</p>
+                </div>
+              </ScrollReveal>
+            ))}
+
           </div>
         </div>
+      </section>
 
-        {/* ================= LEADERSHIP SECTION ================= */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-blue-900 mb-6 text-center">
+      {/* ================= LEADERSHIP ================= */}
+      <section className="max-w-6xl mx-auto px-6 py-32">
+        <ScrollReveal>
+          <h2 className="text-4xl font-bold text-center text-[#0f172a] mb-16">
             Leadership
           </h2>
+        </ScrollReveal>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gray-50 p-8 rounded-xl shadow-md text-center">
-              <h3 className="text-xl font-semibold text-blue-800">
-                Apurba Krishna Chattaraj
-              </h3>
-              <p className="text-gray-600 mt-2">
-                Head of the Institution
+        <div className="grid md:grid-cols-2 gap-12">
+          {[
+            { name: "Apurba Krishna Chattaraj", role: "Head of Institution" },
+            { name: "Sandip Mondal", role: "Head of Institution" },
+          ].map((leader, i) => (
+            <ScrollReveal key={i} delay={i * 200}>
+              <div className="bg-white p-14 rounded-3xl shadow-xl border border-gray-100 text-center hover:shadow-2xl transition duration-500">
+                <h3 className="text-2xl font-semibold text-blue-800">
+                  {leader.name}
+                </h3>
+                <p className="text-gray-600 mt-3">{leader.role}</p>
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </section>
+
+      {/* ================= VISION MISSION ================= */}
+      <section className="bg-gradient-to-r from-blue-900 to-indigo-800 text-white py-32">
+        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+
+          <ScrollReveal>
+            <div className="bg-white/10 backdrop-blur-lg p-12 rounded-3xl border border-white/20">
+              <h3 className="text-2xl font-bold mb-4">Our Vision</h3>
+              <p className="text-gray-200 leading-7">
+                To become a center of excellence in digital education
+                by fostering innovation, professionalism, and continuous growth.
               </p>
             </div>
+          </ScrollReveal>
 
-            <div className="bg-gray-50 p-8 rounded-xl shadow-md text-center">
-              <h3 className="text-xl font-semibold text-blue-800">
-                Sandip Mondal
-              </h3>
-              <p className="text-gray-600 mt-2">
-                Head of the Institution
-              </p>
+          <ScrollReveal delay={200}>
+            <div className="bg-white/10 backdrop-blur-lg p-12 rounded-3xl border border-white/20">
+              <h3 className="text-2xl font-bold mb-4">Our Mission</h3>
+              <ul className="space-y-3 text-gray-200">
+                <li>• Deliver industry-aligned programs</li>
+                <li>• Bridge academic & industry gaps</li>
+                <li>• Develop technical confidence</li>
+                <li>• Prepare students for long-term success</li>
+              </ul>
             </div>
-          </div>
+          </ScrollReveal>
+
         </div>
+      </section>
 
-        {/* ================= LEGACY SECTION ================= */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-blue-900 mb-6">
-            Our Legacy of Excellence
-          </h2>
-          <p className="text-gray-700 leading-8 mb-6">
-            Since April 2009, NUYCTC has consistently evolved alongside technological 
-            advancements. Over the past 16+ years, the institute has built a strong 
-            foundation based on innovation, professionalism, and student-centered learning.
-          </p>
-
-          <ul className="grid md:grid-cols-2 gap-4 text-gray-700 list-disc list-inside">
-            <li>Industry-aligned curriculum</li>
-            <li>Professional training standards</li>
-            <li>Hands-on project-based learning</li>
-            <li>Student-focused academic approach</li>
-          </ul>
-        </div>
-
-        {/* ================= VISION & MISSION ================= */}
-        <div className="grid md:grid-cols-2 gap-10 mb-16">
-          <div className="bg-gray-50 p-8 rounded-xl shadow-md">
-            <h3 className="text-2xl font-semibold text-blue-800 mb-4">
-              Our Vision
-            </h3>
-            <p className="text-gray-700 leading-7">
-              To become a center of excellence in computer and digital education 
-              by fostering innovation, professionalism, and continuous skill enhancement.
+      {/* ================= COMMITMENT ================= */}
+      <section className="py-32 bg-[#0f172a] text-white text-center">
+        <ScrollReveal>
+          <div className="max-w-4xl mx-auto px-6">
+            <h2 className="text-4xl font-bold mb-6">
+              Our Commitment to Excellence
+            </h2>
+            <p className="text-gray-300 leading-8">
+              With over 16 years of legacy and 4,400+ trained students,
+              we are dedicated to transforming learners into confident,
+              future-ready professionals.
             </p>
           </div>
-
-          <div className="bg-gray-50 p-8 rounded-xl shadow-md">
-            <h3 className="text-2xl font-semibold text-blue-800 mb-4">
-              Our Mission
-            </h3>
-            <ul className="text-gray-700 space-y-2 list-disc list-inside">
-              <li>Deliver career-oriented and industry-aligned programs</li>
-              <li>Bridge the gap between academics and industry requirements</li>
-              <li>Develop technical competence and confidence</li>
-              <li>Prepare students for long-term career success</li>
-            </ul>
-          </div>
-        </div>
-
-        {/* ================= ACADEMIC FRAMEWORK ================= */}
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-blue-900 mb-6">
-            Our Academic Framework
-          </h2>
-          <p className="text-gray-700 leading-8 mb-6">
-            NUYCTC offers a comprehensive portfolio of diploma and advanced certification 
-            programs aligned with modern industry standards and emerging technologies.
-          </p>
-
-          <ul className="grid md:grid-cols-2 gap-4 text-gray-700 list-disc list-inside">
-            <li>Diploma & Advanced Certification Courses</li>
-            <li>AI-Integrated Web & Software Development Programs</li>
-            <li>Communication & Personality Development Training</li>
-            <li>Live Projects & Industry-Oriented Assignments</li>
-            <li>Portfolio Development & Deployment Support</li>
-          </ul>
-        </div>
-
-        {/* ================= COMMITMENT SECTION ================= */}
-        <div className="bg-blue-900 text-white p-10 rounded-xl shadow-lg text-center">
-          <h2 className="text-3xl font-bold mb-4">Our Commitment</h2>
-          <p className="max-w-3xl mx-auto leading-8 text-gray-200">
-            With 16+ years of legacy, 4,400+ trained students, and visionary leadership, 
-            NUYCTC remains committed to maintaining the highest standards of academic 
-            excellence, innovation, and professional integrity. Our mission is not 
-            only to educate but to transform students into confident, future-ready professionals.
-          </p>
-        </div>
-
+        </ScrollReveal>
       </section>
+
     </div>
   );
 }
