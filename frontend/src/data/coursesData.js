@@ -2,11 +2,40 @@ const courses = [
   // ===============================
   // INFORMATION TECHNOLOGY
   // ===============================
-
+{
+  id: 1,
+  code: "DDTA",
+  title: "Diploma in Digital Technology Application (DDTA)",
+  category: "Diploma",
+  duration: "12 Months",
+  fees: 8000,
+  syllabus: {
+    semester1: [
+      "Fundamentals of Computer",
+      "Desktop Operating System (Windows 10)",
+      "Number System and Basic Electronics",
+      "MS Office 2016 (Word, Excel, PowerPoint)",
+      "Database Management System (MS Access 2016)",
+      "Internet & E-mail",
+      "Mobile Operating System",
+      "Cyber Security Basics"
+    ],
+    semester2: [
+      "Introduction to Core Programming Concepts",
+      "Algorithm & Flow Chart",
+      "Programming Language with C/C++",
+      "Data Structures and Algorithms (DSA)",
+      "HTML5",
+      "Application Security",
+      "Object-Oriented Programming (OOPS) with Java",
+      "Relational Database Management System (MySQL)"
+    ]
+  }
+},
   {
-    id: 1,
+    id: 2,
     code: "CITA",
-    title: "Certificate in Information Technology Application",
+    title: "Certificate in Information Technology Application (CITA)",
     category: "Certificate",
     duration: "6 Months",
     fees: 2000,
@@ -19,9 +48,9 @@ const courses = [
   },
 
   {
-    id: 2,
+    id: 3,
     code: "DITA",
-    title: "Diploma in Information Technology Application",
+    title: "Diploma in Information Technology Application (DITA)",
     category: "Diploma",
     duration: "12 Months",
     fees: 5000,
@@ -44,9 +73,9 @@ const courses = [
   },
 
   {
-    id: 3,
+    id: 4,
     code: "ADITA",
-    title: "Advance Diploma in Information Technology Application",
+    title: "Advance Diploma in Information Technology Application (ADITA)",
     category: "Advanced Diploma",
     duration: "18 Months",
     fees: 8000,
@@ -80,9 +109,9 @@ const courses = [
   // ===============================
 
   {
-    id: 4,
+    id: 5,
     code: "CFAS",
-    title: "Certificate in Financial Accounting System",
+    title: "Certificate in Financial Accounting System (CFAS)",
     category: "Certificate",
     duration: "6 Months",
     fees: 2000,
@@ -95,9 +124,9 @@ const courses = [
   },
 
   {
-    id: 5,
+    id: 6,
     code: "DFAS",
-    title: "Diploma in Financial Accounting System",
+    title: "Diploma in Financial Accounting System (DFAS)",
     category: "Diploma",
     duration: "12 Months",
     fees: 5000,
@@ -119,9 +148,9 @@ const courses = [
   },
 
   {
-    id: 6,
+    id: 7,
     code: "ADFAS",
-    title: "Advance Diploma in Financial Accounting System",
+    title: "Advance Diploma in Financial Accounting System (ADFAS)",
     category: "Advanced Diploma",
     duration: "18 Months",
     fees: 8000,
@@ -154,9 +183,9 @@ const courses = [
   // ===============================
 
   {
-    id: 7,
+    id: 8,
     code: "CDTP",
-    title: "Certificate in Desktop Publishing",
+    title: "Certificate in Desktop Publishing (CDTP)",
     category: "Certificate",
     duration: "6 Months",
     fees: 2000,
@@ -171,9 +200,9 @@ const courses = [
   },
 
   {
-    id: 8,
+    id: 9,
     code: "DDTP",
-    title: "Diploma in Desktop Publishing",
+    title: "Diploma in Desktop Publishing (DDTP)",
     category: "Diploma",
     duration: "12 Months",
     fees: 5000,
@@ -198,9 +227,9 @@ const courses = [
   },
 
   {
-    id: 9,
+    id: 10,
     code: "ADDTP",
-    title: "Advanced Diploma in Desktop Publishing",
+    title: "Advanced Diploma in Desktop Publishing (ADDTP)",
     category: "Advanced Diploma",
     duration: "18 Months",
     fees: 10000,
@@ -235,9 +264,9 @@ const courses = [
   // ===============================
 
   {
-    id: 10,
+    id: 11,
     code: "CAI",
-    title: "Certificate in Artificial Intelligence",
+    title: "Certificate in Artificial Intelligence (CAI)",
     category: "Certificate",
     duration: "6 Months",
     fees: 6000,
@@ -253,9 +282,9 @@ const courses = [
   },
 
   {
-    id: 11,
+    id: 12,
     code: "DAI",
-    title: "Diploma in Artificial Intelligence",
+    title: "Diploma in Artificial Intelligence (DAI)",
     category: "Diploma",
     duration: "12 Months",
     fees: 12000,
@@ -286,9 +315,9 @@ const courses = [
   // ===============================
 
   {
-    id: 12,
+    id: 13,
     code: "CDM",
-    title: "Certificate in Digital Marketing",
+    title: "Certificate in Digital Marketing (CDM)",
     category: "Certificate",
     duration: "6 Months",
     fees: 6000,
@@ -296,9 +325,9 @@ const courses = [
   },
 
   {
-    id: 13,
+    id: 14,
     code: "DDS",
-    title: "Diploma in Data Science",
+    title: "Diploma in Data Science (DDS)",
     category: "Diploma",
     duration: "12 Months",
     fees: 12000,
@@ -306,18 +335,18 @@ const courses = [
   },
 
   {
-    id: 14,
+    id: 15,
     code: "DCT",
-    title: "Diploma in Digital Classroom Training",
+    title: "Diploma in Digital Classroom Training (DCT)",
     category: "Diploma",
     duration: "12 Months",
     fees: 12000,
     syllabus: ["Syllabus Coming Soon"],
   },
 {
-  id: 15,
+  id: 16,
   code: "CBM",
-  title: "Certificate in Basic Multimedia",
+  title: "Certificate in Basic Multimedia (CBM)",
   category: "Certificate",
   duration: "6 Months",
   fees: 5500,
@@ -331,9 +360,9 @@ const courses = [
 },
 
 {
-  id: 16,
+  id: 17,
   code: "DMAVE",
-  title: "Diploma in Multimedia, Animation & Video Editing",
+  title: "Diploma in Multimedia, Animation & Video Editing (DMAVE)",
   category: "Diploma",
   duration: "12 Months",
   fees: 14900,
@@ -355,9 +384,9 @@ const courses = [
 },
 
 {
-  id: 17,
+  id: 18,
   code: "CCHM",
-  title: "Certificate in Computer Hardware Maintenance",
+  title: "Certificate in Computer Hardware Maintenance (CCHM)",
   category: "Certificate",
   duration: "6 Months",
   fees: 2800,
@@ -372,9 +401,9 @@ const courses = [
 },
 
 {
-  id: 18,
+  id: 19,
   code: "DCHM",
-  title: "Diploma in Computer Hardware Maintenance",
+  title: "Diploma in Computer Hardware Maintenance (DCHM)",
   category: "Diploma",
   duration: "12 Months",
   fees: 6000,
@@ -401,9 +430,9 @@ const courses = [
 },
 
 {
-  id: 19,
+  id: 20,
   code: "CCAD",
-  title: "Certificate in Computer Aided Design",
+  title: "Certificate in Computer Aided Design (CCAD)",
   category: "Certificate",
   duration: "6 Months",
   fees: 2800,
@@ -418,9 +447,9 @@ const courses = [
 },
 
 {
-  id: 20,
+  id: 21,
   code: "CCST",
-  title: "Certificate in Client Server Technology",
+  title: "Certificate in Client Server Technology (CCST)",
   category: "Certificate",
   duration: "6 Months",
   fees: 5000,
@@ -433,9 +462,9 @@ const courses = [
 },
 
 {
-  id: 21,
+  id: 22,
   code: "CPP",
-  title: "Certificate in Python Programming",
+  title: "Certificate in Python Programming (CPP)",
   category: "Certificate",
   duration: "6 Months",
   fees: 6000,
@@ -449,9 +478,9 @@ const courses = [
 },
 
 {
-  id: 22,
+  id: 23,
   code: "CGS",
-  title: "Certificate in Green Skills with AI",
+  title: "Certificate in Green Skills with AI (CGS)",
   category: "Certificate",
   duration: "48 Hours / 6 Months",
   fees: 6000,
@@ -465,6 +494,146 @@ const courses = [
     "Sustainable AI & Green Computing",
     "Mini Green AI Projects (Tool-Based)"
   ]
+},
+{
+  id: 24,
+  code: "SEB",
+  title: "Spoken English (Basic)",
+  category: "Language",
+  duration: "4 Months",
+  fees: "(Changable)",  
+  syllabus: {
+    month1: [
+      "Foundation & Daily Vocabulary (Breaking the Fear)",
+      "Basic Greetings & Self Introduction",
+      "Common Daily Use Sentences",
+      "Basic Pronunciation Practice"
+    ],
+    month2: [
+      "Essential Grammar (Tense Basics, Parts of Speech)",
+      "Simple Conversation Practice",
+      "Question Formation",
+      "Sentence Structure Practice"
+    ],
+    month3: [
+      "Narrating Daily Activities",
+      "Expressing Thoughts & Opinions",
+      "Storytelling Practice",
+      "Role Play Conversations"
+    ],
+    month4: [
+      "Fluency Development Techniques",
+      "Public Speaking Practice",
+      "Interview Preparation Basics",
+      "Real-life Conversation Practice"
+    ],
+    activities: [
+      "Listening: News, simple podcasts, or children’s stories",
+      "Speaking: Daily conversation practice, reading aloud, tongue twisters",
+      "Vocabulary: Learning 5–10 new words daily"
+    ]
+  }
+},
+{
+  id: 25,
+  code: "FDAI",
+  title: "Frontend Development with AI (FDAI)",
+  category: "Advanced",
+  duration: "6 Months",
+  fees: 10000,
+  syllabus: {
+    module1: [
+      "HTML5 – Structure & Semantic Tags",
+      "CSS3 – Styling, Flexbox & Grid",
+      "Responsive Design Techniques"
+    ],
+    module2: [
+      "Bootstrap – Layout & Components",
+      "JavaScript – Basics to Advanced Concepts",
+      "DOM Manipulation & ES6"
+    ],
+    module3: [
+      "React JS – Components & JSX",
+      "Props, State & Hooks",
+      "React Router & Project Structure"
+    ],
+    module4: [
+      "ChatGPT for Developers",
+      "Using AI Tools for Code Optimization",
+      "AI-assisted Debugging & Productivity"
+    ],
+    module5: [
+      "Final Frontend Project",
+      "Hosting & Deployment (Vercel / Netlify)",
+      "Portfolio Development"
+    ]
+  }
+},
+{
+  id: 26,
+  code: "WDAI",
+  title: "Web Design with AI (WDAI)",
+  category: "Advanced",
+  duration: "5 Months",
+  fees: 7000,   
+  syllabus: {
+    module1: [
+      "HTML5 – Structure & Semantic Tags",
+      "CSS3 – Styling, Flexbox & Grid",
+      "Responsive Web Design"
+    ],
+    module2: [
+      "Bootstrap – Layout & Components",
+      "Website Layout Design Principles",
+      "UI/UX Basics"
+    ],
+    module3: [
+      "JavaScript – Basics & DOM Manipulation",
+      "Interactive Website Development",
+      "Form Validation"
+    ],
+    module4: [
+      "ChatGPT for Web Designers",
+      "Using AI Tools for UI/UX Design",
+      "AI-assisted Code Generation"
+    ],
+    module5: [
+      "Live Website Project",
+      "Hosting & Deployment (Vercel / Netlify / cPanel)",
+      "Portfolio Website Creation"
+    ]
+  }
+},
+{
+  id: 27,
+  code: "MERN-AI",
+  title: "MERN Stack Web Development with AI (MERN-AI)",
+  category: "Advanced",
+  duration: "12 Months",
+  fees: 20000,  
+  syllabus: {
+    semester1: [
+      "HTML5 – Structure & Semantic Tags",
+      "CSS3 – Advanced Styling & Responsive Design",
+      "Bootstrap & Tailwind CSS",
+      "JavaScript (ES6+) & DOM Manipulation",
+      "Git & GitHub Version Control",
+      "React JS – Components, Props & State",
+      "React Hooks & React Router",
+      "Frontend Project Development"
+    ],
+    semester2: [
+      "Node.js – Backend Development",
+      "Express.js – REST API Development",
+      "MongoDB – Database Design & CRUD Operations",
+      "Authentication & Authorization (JWT)",
+      "Full MERN Stack Project Development",
+      "ChatGPT for Developers",
+      "AI Tools for Code Optimization & Debugging",
+      "Deployment (Vercel, Render, VPS)",
+      "Portfolio & Live Project"
+    ]
+  }
 }
   
 ];

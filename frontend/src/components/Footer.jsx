@@ -11,7 +11,7 @@ function Footer() {
           </h3>
 
           <ul className="space-y-2 text-sm leading-6">
-            <li>• Providing Computer Education since 2008</li>
+            <li>• Providing Computer Education since April 2009</li>
             <li>• Experienced & Skilled Teachers</li>
             <li>• Affordable Course Fees</li>
             <li>• Monthly Installment Facility</li>
