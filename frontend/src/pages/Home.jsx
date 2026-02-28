@@ -168,6 +168,7 @@ function Home() {
                             </ScrollReveal>
                         ))}
                     </div>
+                    <div className="flex justify-center mt-16"> <button onClick={() => navigate("/courses")} className="relative text-blue-700 text-lg font-semibold group" > Explore Complete Course Catalog <span className="ml-2 inline-block transition-transform duration-300 group-hover:translate-x-2"> → </span> {/* Animated Line */} <span className="absolute left-1/2 -bottom-1 h-[2px] w-0 bg-gradient-to-r from-blue-600 to-indigo-600 transition-all duration-300 group-hover:w-full group-hover:left-0"></span> </button> </div>
                 </div>
             </section>
 
@@ -204,8 +205,12 @@ function Home() {
                                     />
                                     <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-500"></div>
                                 </div>
+
                             </ScrollReveal>
                         ))}
+                    </div>
+                    <div className="text-center mt-14">
+                        <button onClick={() => navigate("/gallery")} className="px-12 py-4 bg-[#0f172a] text-white rounded-full font-semibold shadow-xl hover:scale-105 transition duration-300" > View Full Gallery </button>
                     </div>
                 </div>
             </section>
